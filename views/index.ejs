@@ -7,7 +7,7 @@ punch.setAttribute('src', '/sounds/punch.ogg');
 var fight = document.createElement('audio');
 fight.setAttribute('src', '/sounds/fight.ogg');
 var music = document.createElement('audio');
-music.setAttribute('src', '/sounds/music.mp3');
+music.setAttribute('src', '/sounds/music.ogg');
 var uhh = document.createElement('audio');
 uhh.setAttribute('src', '/sounds/uhh.ogg');
 
@@ -52,17 +52,16 @@ $( document ).ready(function() {
       
     //Round Timer
     var count = roundTime;
-    var counter = setInterval(timer, 1000);
-    function timer() {
+    var counter = setInterval(function timer() {
         $("#countdown").text(count);
-        count=count-1;
+        count--;
         if (count <= 0) {
             clearInterval(counter);
             $("#countdown").text(0);
             socket.disconnect();
             uhh.play();
         }
-    };
+    }, 1000);
   }
 });
 </script>
