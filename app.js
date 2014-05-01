@@ -30,8 +30,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//Routes
 app.get('/', routes.index);
-app.get('/users', user.list);
 
 server.listen(port, function(){
     console.log("Server listening on port " + port + ". HADOUKEN!");
