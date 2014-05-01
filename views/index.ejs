@@ -1,6 +1,7 @@
 <% layout('layout') -%>
 
 <script type='text/javascript'>
+//Audio Settings    
 var punch = document.createElement('audio');
 punch.setAttribute('src', '/sounds/punch.ogg');
 var fight = document.createElement('audio');
@@ -11,7 +12,6 @@ var uhh = document.createElement('audio');
 uhh.setAttribute('src', '/sounds/uhh.ogg');
 
 $( document ).ready(function() {
-    
     var player1 = $("#player1Hidden").html(),
         player2 = $("#player2Hidden").html(),
         roundTime = parseInt($("#roundTimeHidden").text());
@@ -22,22 +22,12 @@ $( document ).ready(function() {
     var player1Counter = 0,
         player2Counter = 0;
     
-
-    
   //Set visibility based on player selection
   if(($("#player1").text() == "") && ($("#player2").text() == "")) {
     $("#playerRow").hide();
   }
   else {
-    //Audio Settings
-    
-    
-            
-    
-    
     fight.play();
-    
-    
     music.setAttribute('autoplay', 'autoplay');
     music.loop = true;
       
