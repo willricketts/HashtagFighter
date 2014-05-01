@@ -59,6 +59,7 @@ $( document ).ready(function() {
             clearInterval(counter);
             $("#countdown").text(0);
             socket.disconnect();
+            music.pause();
             uhh.play();
         }
     }, 1000);
