@@ -21,6 +21,7 @@ body {
 #header {
     font-family: permanent-marker, sans-serif;
     font-size: 62px;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .container {
@@ -31,24 +32,35 @@ body {
 
 #instructions {
     font-family: abel, sans-serif;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .time {
     font-family: abel, sans-serif;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .score {
     font-family: abel, sans-serif;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .playerHeader {
     font-family: julee, fantasy;
     font-size: 40px;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .player {
     font-family: abel, sans-serif;
     font-size: 28px;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
+}
+
+.hash {
+    font-family: abel, sans-serif;
+    font-size: 28px;
+    text-shadow: 0px 0px 11px rgba(255, 146, 150, 1);
 }
 
 .tweet {
