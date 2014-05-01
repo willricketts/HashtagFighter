@@ -5,6 +5,12 @@ $( document ).ready(function() {
   if(($("#player1").text() == "") && ($("#player2").text() == "")) {
     $("#playerRow").hide();
   }
+  else {
+    var socket = io.connect('http://localhost:3000');
+    socket.on('twitter', function (twidata) {
+      console.log(twidata.text);
+    });
+  }
 });
 </script>
 
@@ -16,6 +22,13 @@ $( document ).ready(function() {
 <div class="row">
   <div class="col-lg-12 text-center">
     <h4>Turbo!</h4>
+  </div>
+</div>
+<div class="row" id="playerSelect">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center">
+      <h5>Enter two brand hashtags, such as "#apple" & "#samsung" to see which brand has more exposure on Twitter in realtime.</h5>
+    </div>
   </div>
 </div>
 <div class="row" id="playerRow">
