@@ -12,6 +12,8 @@ var twitterKeys = require('./modules/twitterkeys.js');
 
 var app = express();
 
+var T = new Twit(twitterKeys);
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
