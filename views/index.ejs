@@ -37,13 +37,13 @@ $( document ).ready(function() {
     socket.on('twitter', function (twidata) {
         console.log(twidata.text);
         if(twidata.text.indexOf(player1StripCase) != -1){
-            $("#player1Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            $("#player1Tweets").append("<i class='fa fa-chevron-right'></i><li class='tweet'><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
             player1Counter++;
             $("#player1Counter").text(player1Counter);
             punch.play();
         }
         else if(twidata.text.indexOf(player2StripCase) != -1){
-            $("#player2Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            $("#player2Tweets").append("<i class='fa fa-chevron-right bullet'></i><li class='tweet'><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
             player2Counter++;
             $("#player2Counter").text(player2Counter);
             punch.play();
@@ -71,7 +71,7 @@ $( document ).ready(function() {
 <h2 style="display:none;" id="roundTimeHidden"><%= roundTime %></h2>
 <div class="row">
   <div class="col-lg-12 text-center">
-    <h1><%= title %></h1>
+    <h1 id="header"><%= title %></h1>
   </div>
 </div>
 <div class="row">
@@ -81,8 +81,8 @@ $( document ).ready(function() {
 </div>
 <div class="row" id="playerSelect">
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center">
-      <h5>Enter two brand hashtags, such as "#apple" & "#samsung" to see which brand has more exposure on Twitter in realtime.</h5>
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center" id="instructions">
+      <h4>Enter two brand hashtags, such as "#apple" & "#samsung" to see which brand has more exposure on Twitter in realtime.</h4>
     </div>
   </div>
   <div class="row" id="playerSelectForm">
@@ -126,28 +126,28 @@ $( document ).ready(function() {
 <div class="row" id="playerRow">
   <div class="row" id="scoreboard">
       <div class="col-lg-1 col-lg-offset-5 text-center">
-          <h1 id="player1Counter">0</h1>
+          <h1 id="player1Counter" class="score">0</h1>
       </div>
       <div class="col-lg-1 text-center">
-          <h1 id="player2Counter">0</h1>
+          <h1 id="player2Counter" class="score">0</h1>
       </div>
   </div>
   <div class="row">
     <div class="col-lg-12 text-center">
-        <h2 style="display:inline;">Time: </h2><h2 id="countdown" style="display:inline;">0</h2>
+        <h2 style="display:inline;" class="time">Time: </h2><h2 id="countdown" class="time" style="display:inline;">0</h2>
     </div>
   </div>
   <div class="col-lg-6 col-md-6 text-center">
-    <h2>Player 1</h2>
-    <h3 class="hash" style="display: inline;"></h3><h3 id="player1" style="display: inline;"><%- player1 %></h3>
+    <h2 class="playerHeader">Player 1</h2>
+    <h3 class="hash" style="display: inline;"></h3><h3 id="player1" class="player" style="display: inline;"><%- player1 %></h3>
     <div class="tweets">
         <ul id="player1Tweets" class="text-left">
         </ul>
     </div>
   </div>
   <div class="col-lg-6 col-md-6 text-center">
-    <h2>Player 2</h2>
-    <h3 class="hash" style="display: inline;"></h3><h3 id="player2" style="display: inline;"><%- player2 %></h3>
+    <h2 class="playerHeader">Player 2</h2>
+    <h3 class="hash" style="display: inline;"></h3><h3 id="player2" class="player" style="display: inline;"><%- player2 %></h3>
     <div class="tweets">
         <ul id="player2Tweets" class="text-left">
         </ul>

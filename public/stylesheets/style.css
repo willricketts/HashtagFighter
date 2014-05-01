@@ -6,3 +6,57 @@
 a {
   color: #00B7FF;
 }*/
+
+body {
+    background-image: url('/images/bg.gif');
+    background-repeat:no-repeat;
+    background-size:100%;
+    -moz-background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    min-height:100%;
+    background-attachment:fixed;
+    color: #fff;
+}
+
+#header {
+    font-family: permanent-marker, sans-serif;
+    font-size: 62px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding-bottom: 40px;
+}
+
+#instructions {
+    font-family: abel, sans-serif;
+}
+
+.time {
+    font-family: abel, sans-serif;
+}
+
+.score {
+    font-family: abel, sans-serif;
+}
+
+.playerHeader {
+    font-family: julee, fantasy;
+    font-size: 40px;
+}
+
+.player {
+    font-family: abel, sans-serif;
+    font-size: 28px;
+}
+
+.tweet {
+    list-style: none;
+    font-family: abel, sans-serif;
+    font-size: 18px;
+}
+
+.bullet {
+    display: inline;
+}
