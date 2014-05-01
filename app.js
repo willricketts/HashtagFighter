@@ -10,8 +10,6 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var twitterKeys = require('./modules/twitterkeys.js');
 
-var app = express();
-
 //Set up Twitter wrapper with twitterKeys module exports
 var T = new Twit(twitterKeys);
 
@@ -30,7 +28,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/test', routes.index);
 app.get('/users', user.list);
 
 server.listen(port, function(){
