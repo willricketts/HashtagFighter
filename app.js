@@ -28,7 +28,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/test', routes.index);
+app.get('/', routes.index);
 app.get('/users', user.list);
 
 server.listen(port, function(){
