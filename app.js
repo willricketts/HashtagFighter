@@ -3,7 +3,12 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var twitterKeys = require('./twitterkeys.js');
+var Twit = require('twit');
+var app = express();
+var port = 3000;
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+var twitterKeys = require('./modules/twitterkeys.js');
 
 var app = express();
 
@@ -25,7 +30,6 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log(twitterKeys.consumer_key);
-  console.log('Express server listening on port ' + app.get('port'));
+server.listen(port, function(){
+    console.log("Server listening on port " + port);
 });
