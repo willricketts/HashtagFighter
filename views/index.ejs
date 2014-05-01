@@ -35,8 +35,6 @@ $( document ).ready(function() {
             //punch.play();
         }
     });
-    
-    //Round Timer
     var count=30;
     var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
     function timer() {
@@ -45,7 +43,7 @@ $( document ).ready(function() {
         if (count <= 0) {
             clearInterval(counter);
             $("#countdown").text(0);
-            return;
+            socket.disconnect();
         }
     };
   }
