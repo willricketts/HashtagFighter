@@ -40,8 +40,9 @@ app.get('/', function(req, res){
     player1 = req.query.player1,
     player2 = req.query.player2;
     console.log(player1 + " | " + player2);
-
-    var hashtags = [player1, player2];
+    
+    //Add # to brand strings
+    var hashtags = ["#" + player1, "#" + player2];
     io.sockets.on('connection', function(socket){
       console.log('client connected');
       console.log('streaming tweets for: ' + hashtags[0] + " & " + hashtags[1]);

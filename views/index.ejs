@@ -17,6 +17,7 @@ $( document ).ready(function() {
     $("#playerRow").hide();
   }
   else {
+    $(".hash").text("#");
     $("#playerSelectForm").hide();
     var socket = io.connect('http://localhost:3000');
     socket.on('twitter', function (twidata) {
@@ -116,7 +117,7 @@ $( document ).ready(function() {
   </div>
   <div class="col-lg-6 col-md-6 text-center">
     <h2>Player 1</h2>
-    <h3 id="player1"><%- player1 %></h3>
+    <h3 class="hash" style="display: inline;"></h3><h3 id="player1" style="display: inline;"><%- player1 %></h3>
     <div class="tweets">
         <ul id="player1Tweets" class="text-left">
         </ul>
@@ -124,7 +125,7 @@ $( document ).ready(function() {
   </div>
   <div class="col-lg-6 col-md-6 text-center">
     <h2>Player 2</h2>
-    <h3 id="player2"><%- player2 %></h3>
+    <h3 class="hash" style="display: inline;"></h3><h3 id="player2" style="display: inline;"><%- player2 %></h3>
     <div class="tweets">
         <ul id="player2Tweets" class="text-left">
         </ul>
