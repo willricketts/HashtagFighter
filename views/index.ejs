@@ -1,6 +1,15 @@
 <% layout('layout') -%>
 
 <script type='text/javascript'>
+var punch = document.createElement('audio');
+punch.setAttribute('src', '/sounds/punch.ogg');
+var fight = document.createElement('audio');
+fight.setAttribute('src', '/sounds/fight.ogg');
+var music = document.createElement('audio');
+music.setAttribute('src', '/sounds/music.mp3');
+var uhh = document.createElement('audio');
+uhh.setAttribute('src', '/sounds/uhh.ogg');
+
 $( document ).ready(function() {
     
     var player1 = $("#player1Hidden").html(),
@@ -13,11 +22,25 @@ $( document ).ready(function() {
     var player1Counter = 0,
         player2Counter = 0;
     
+
+    
   //Set visibility based on player selection
   if(($("#player1").text() == "") && ($("#player2").text() == "")) {
     $("#playerRow").hide();
   }
   else {
+    //Audio Settings
+    
+    
+            
+    
+    
+    fight.play();
+    
+    
+    music.setAttribute('autoplay', 'autoplay');
+    music.loop = true;
+      
     $(".hash").text("#");
     $("#playerSelectForm").hide();
     var socket = io.connect('http://localhost:3000');
@@ -27,13 +50,13 @@ $( document ).ready(function() {
             $("#player1Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
             player1Counter++;
             $("#player1Counter").text(player1Counter);
-            //punch.play();
+            punch.play();
         }
         else if(twidata.text.indexOf(player2StripCase) != -1){
             $("#player2Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
             player2Counter++;
             $("#player2Counter").text(player2Counter);
-            //punch.play();
+            punch.play();
         }
     });
       
@@ -47,6 +70,7 @@ $( document ).ready(function() {
             clearInterval(counter);
             $("#countdown").text(0);
             socket.disconnect();
+            uhh.play();
         }
     };
   }
