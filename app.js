@@ -12,6 +12,7 @@ var twitterKeys = require('./modules/twitterkeys.js');
 
 var app = express();
 
+//Set up Twitter wrapper with twitterKeys module exports
 var T = new Twit(twitterKeys);
 
 app.set('port', process.env.PORT || 3000);
@@ -33,5 +34,5 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 server.listen(port, function(){
-    console.log("Server listening on port " + port);
+    console.log("Server listening on port " + port + ". HADOUKEN!");
 });
