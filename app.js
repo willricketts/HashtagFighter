@@ -33,12 +33,13 @@ app.get('/', function(req, res){
   var clients = io.sockets.clients();
   console.log(clients.id);
   var player1 = "",
-      player2 = "";
-
+      player2 = "",
+      roundTime = 0;
   //Once players are selected
   if((req.query.player1 != "") && (req.query.player2 != "")){
     player1 = req.query.player1,
     player2 = req.query.player2;
+    roundTime = req.query.roundTime;
     console.log(player1 + " | " + player2);
     
     //Add # to brand strings
@@ -58,7 +59,7 @@ app.get('/', function(req, res){
   };
 
   //Render view
-  res.render('index', { title: 'Hashtag Fighter', player1: player1, player2: player2 });
+  res.render('index', { title: 'Hashtag Fighter', player1: player1, player2: player2, roundTime: roundTime });
 });
 
 server.listen(port, function(){
