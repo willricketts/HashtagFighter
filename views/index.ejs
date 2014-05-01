@@ -1,22 +1,30 @@
-  <% layout('layout') -%>
+<% layout('layout') -%>
 
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1><%= title %></h1>
-    </div>
+<script type='text/javascript'>
+$( document ).ready(function() {
+  if(($("#player1").text() == "") && ($("#player2").text() == "")) {
+    $("#playerRow").hide();
+  }
+});
+</script>
+
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h1><%= title %></h1>
   </div>
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <h4>Turbo!</h4>
-    </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h4>Turbo!</h4>
   </div>
-  <div class="row">
-    <div class="col-lg-6 col-md-6 text-center">
-      <h2>Player 1</h2>
-      <h3><%- player1 %></h3>
-    </div>
-    <div class="col-lg-6 col-md-6 text-center">
-      <h2>Player 2</h2>
-      <h3><%- player2 %></h3>
-    </div>
+</div>
+<div class="row" id="playerRow">
+  <div class="col-lg-6 col-md-6 text-center">
+    <h2>Player 1</h2>
+    <h3 id="player1"><%- player1 %></h3>
   </div>
+  <div class="col-lg-6 col-md-6 text-center">
+    <h2>Player 2</h2>
+    <h3 id="player2"><%- player2 %></h3>
+  </div>
+</div>
