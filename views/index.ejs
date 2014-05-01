@@ -16,6 +16,7 @@ $( document ).ready(function() {
     $("#playerRow").hide();
   }
   else {
+    $("#playerSelectForm").hide();
     var socket = io.connect('http://localhost:3000');
     socket.on('twitter', function (twidata) {
         console.log(twidata.text);
@@ -52,6 +53,31 @@ $( document ).ready(function() {
     <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 text-center">
       <h5>Enter two brand hashtags, such as "#apple" & "#samsung" to see which brand has more exposure on Twitter in realtime.</h5>
     </div>
+  </div>
+  <div class="row" id="playerSelectForm">
+      <form class="form-horizontal" action="/" method="get">
+          <fieldset>
+              <legend class="text-center">Player Select</legend>
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="player1Select">#</label>
+                  <div class="col-md-4">
+                      <input id="player1Select" name="player1" type="text" placeholder="Brand One" class="form-control input-md" required="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="player2Select">#</label>
+                  <div class="col-md-4">
+                      <input id="player2Select" name="player2" type="text" placeholder="Brand Two" class="form-control input-md" required="">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="fight"></label>
+                  <div class="col-md-4 text-center">
+                      <button id="fight" class="btn btn-primary btn-group-justified" type="submit">Fight!</button>
+                  </div>
+              </div>
+          </fieldset>
+      </form>
   </div>
 </div>
 <div class="row" id="playerRow">
