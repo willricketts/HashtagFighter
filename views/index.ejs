@@ -9,6 +9,9 @@ $( document ).ready(function() {
     var player1StripCase = player1.toLowerCase(),
         player2StripCase = player2.toLowerCase();
     
+    var player1Counter = 0,
+        player2Counter = 0;
+    
   if(($("#player1").text() == "") && ($("#player2").text() == "")) {
     $("#playerRow").hide();
   }
@@ -18,10 +21,14 @@ $( document ).ready(function() {
         console.log(twidata.text);
         if(twidata.text.indexOf(player1StripCase) != -1){
             $("#player1Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            player1Counter++;
+            $("#player1Counter").text(player1Counter);
             //punch.play();
         }
         else if(twidata.text.indexOf(player2StripCase) != -1){
             $("#player2Tweets").append("<li><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            player2Counter++;
+            $("#player2Counter").text(player2Counter);
             //punch.play();
         }
     });
@@ -48,6 +55,14 @@ $( document ).ready(function() {
   </div>
 </div>
 <div class="row" id="playerRow">
+  <div class="row" id="scoreboard">
+      <div class="col-lg-1 col-lg-offset-5">
+          <h1 id="player1Counter">0</h1>
+      </div>
+      <div class="col-lg-1">
+          <h1 id="player2Counter">0</h1>
+      </div>
+  </div>
   <div class="col-lg-6 col-md-6 text-center">
     <h2>Player 1</h2>
     <h3 id="player1"><%- player1 %></h3>
