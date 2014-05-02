@@ -37,13 +37,13 @@ $( document ).ready(function() {
     socket.on('twitter', function (twidata) {
         console.log(twidata.text);
         if(twidata.text.indexOf(player1StripCase) != -1){
-            $("#player1Tweets").append("<i class='fa fa-chevron-right'></i><li class='tweet'><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            $("#player1Tweets").append("<li class='tweet'><i class='fa fa-chevron-right'></i><strong> " + twidata.user.screen_name + ":</strong> " + twidata.text + "</li><br />");
             player1Counter++;
             $("#player1Counter").text(player1Counter);
             punch.play();
         }
         else if(twidata.text.indexOf(player2StripCase) != -1){
-            $("#player2Tweets").append("<i class='fa fa-chevron-right bullet'></i><li class='tweet'><strong>" + twidata.user.screen_name + ":</strong> " + twidata.text + "</li>");
+            $("#player2Tweets").append("<li class='tweet'><i class='fa fa-chevron-right'></i><strong> " + twidata.user.screen_name + ":</strong> " + twidata.text + "</li><br />");
             player2Counter++;
             $("#player2Counter").text(player2Counter);
             punch.play();
